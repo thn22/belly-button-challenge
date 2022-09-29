@@ -51,15 +51,4 @@ const url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
         Plotly.newPlot('bubble', traceData2, layout2);
     });
 
-    d3.json(url).then(data => {
-        let metaData = data.metadata;
-        console.log('metadata:', metaData);
-
-        let refined = metaData.filter(meta => meta.id.toString() === id)[0];
-        console.log(refined)
-        let demo = d3.select('#sample-metadata');
-        demo.html("");
-        Object.entries(result).forEach((key) => {
-            demo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");
-        });
-    });
+// not sure how to do the rest
